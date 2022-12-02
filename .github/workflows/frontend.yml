@@ -45,7 +45,7 @@ jobs:
         with:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
-          platforms: linux/arm/v7,linux/arm64/v8,linux/amd64 
+          platforms: linux/arm64/v8,linux/amd64 
           context: ./
           file: ./dockerfile.v1
           push: true
@@ -57,4 +57,3 @@ jobs:
         run: |
           rm -rf /tmp/.buildx-cache
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache
-          
